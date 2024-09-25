@@ -33,16 +33,16 @@ public class Car {
 	// Behavior
     public void drive() {
 		// 10 is the default speed
-        speed = 10; 
-		System.out.println(model + " started to drive.");
+        this.speed = 10; 
+		System.out.println(this.model + " started to drive.");
     }
 	
 	public void accelerate() {
 		Random random = new Random();
 		int randomNumber = random.nextInt(10)+1;
-		while (speed <= 20) {
-        	speed += randomNumber;
+		while (this.speed <= 20) {
+        	this.speed += randomNumber;
 		}
-		System.out.println(model + " is now driving " + speed + "!");
+		System.out.println(model + " is now driving " + this.speed + "!");
     }
 }

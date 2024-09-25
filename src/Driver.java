@@ -33,7 +33,7 @@ public class Driver {
     }
 
     public void go() {
-        System.out.println(name + " is starting with " + car.getModel() + ".");
+        System.out.println(this.name + " is starting with " + this.car.getModel() + ".");
         this.car.drive();
         this.car.accelerate();
     }

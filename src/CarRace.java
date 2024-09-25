@@ -39,25 +39,26 @@ public class CarRace {
 	// Non-static methods that can be accessed using a CarRace object
 	// Behavior
 	public void startRace() {
-		System.out.println("Race on " + name + " is starting...\n\nReady, set, GO!\n");
+		System.out.println("Race on " + this.name + " is starting...\n\nReady, set, GO!\n");
+		
 		Random random = new Random();
 		boolean headsOrTails = random.nextBoolean();
 
 		if (headsOrTails) {
-			driver1.go();
-			driver2.go();
+			this.driver1.go();
+			this.driver2.go();
 		} else {
-			driver2.go();
-			driver1.go();
+			this.driver2.go();
+			this.driver1.go();
 		}
 	}
 
 	public void signUp(Driver driver) {
-		if (driver1 == null) {
-			driver1 = driver;
+		if (this.driver1 == null) {
+			this.driver1 = driver;
 			numberOfDrivers++;
-		} else if (driver2 == null) {
-			driver2 = driver;
+		} else if (this.driver2 == null) {
+			this.driver2 = driver;
 			numberOfDrivers++;
 		} else {
 			System.out.println("Two drivers already signed up, please wait until the next race!");
@@ -67,10 +68,10 @@ public class CarRace {
 	// Example: We determine the winner based on their achieved speed
 	private void determineWinner() {
 		System.out.println("\nThe race is over; comparing speeds ...\n"); 
-		if (driver1.getCar().getSpeed() > driver2.getCar().getSpeed()) {
-			System.out.println(driver1.getName() + " has won!");
-		} else if (driver2.getCar().getSpeed() > driver1.getCar().getSpeed()) {
-			System.out.println(driver2.getName() + " has won!");
+		if (this.driver1.getCar().getSpeed() > this.driver2.getCar().getSpeed()) {
+			System.out.println(this.driver1.getName() + " has won!");
+		} else if (this.driver2.getCar().getSpeed() > this.driver1.getCar().getSpeed()) {
+			System.out.println(this.driver2.getName() + " has won!");
 		} else {
 			System.out.println("It's a draw!");
 		}
